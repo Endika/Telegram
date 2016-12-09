@@ -97,7 +97,8 @@ public class ActionBarMenu extends LinearLayout {
     }
 
     public void hideAllPopupMenus() {
-        for (int a = 0; a < getChildCount(); a++) {
+        int count = getChildCount();
+        for (int a = 0; a < count; a++) {
             View view = getChildAt(a);
             if (view instanceof ActionBarMenuItem) {
                 ((ActionBarMenuItem) view).closeSubMenu();
@@ -112,14 +113,12 @@ public class ActionBarMenu extends LinearLayout {
     }
 
     public void clearItems() {
-        while(getChildCount() > 0) {
-            View view = getChildAt(0);
-            removeView(view);
-        }
+        removeAllViews();
     }
 
     public void onMenuButtonPressed() {
-        for (int a = 0; a < getChildCount(); a++) {
+        int count = getChildCount();
+        for (int a = 0; a < count; a++) {
             View view = getChildAt(a);
             if (view instanceof ActionBarMenuItem) {
                 ActionBarMenuItem item = (ActionBarMenuItem) view;
@@ -138,7 +137,8 @@ public class ActionBarMenu extends LinearLayout {
     }
 
     public void closeSearchField() {
-        for (int a = 0; a < getChildCount(); a++) {
+        int count = getChildCount();
+        for (int a = 0; a < count; a++) {
             View view = getChildAt(a);
             if (view instanceof ActionBarMenuItem) {
                 ActionBarMenuItem item = (ActionBarMenuItem) view;
@@ -151,7 +151,8 @@ public class ActionBarMenu extends LinearLayout {
     }
 
     public void openSearchField(boolean toggle, String text) {
-        for (int a = 0; a < getChildCount(); a++) {
+        int count = getChildCount();
+        for (int a = 0; a < count; a++) {
             View view = getChildAt(a);
             if (view instanceof ActionBarMenuItem) {
                 ActionBarMenuItem item = (ActionBarMenuItem) view;
